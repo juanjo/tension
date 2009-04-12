@@ -1,0 +1,18 @@
+[submodule "vendor/plugins/will_paginate"]
+	path = vendor/plugins/will_paginate
+	url = git://github.com/mislav/will_paginate.git
+[submodule "vendor/plugins/restful-authentication"]
+	path = vendor/plugins/restful-authentication
+	url = git://github.com/technoweenie/restful-authentication.git
+[submodule "vendor/plugins/grvatar-plugin"]
+	path = vendor/plugins/grvatar-plugin
+	url = git://github.com/woods/gravatar-plugin.git
+[submodule "vendor/plugins/ruby-github"]
+	path = vendor/plugins/ruby-github
+	url = git://github.com/mbleigh/ruby-github.git
+[submodule "vendor/plugins/has_permalink"]
+	path = vendor/plugins/has_permalink
+	url = git://github.com/fnando/has_permalink.git
+[submodule "vendor/plugins/role_requirement"]
+	path = vendor/plugins/role_requirement
+	url = git://github.com/timcharper/role_requirement.git
