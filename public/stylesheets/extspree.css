@@ -29,6 +29,7 @@ a:visited {
   color: #fff;
 }
 
+
 #menu {
   background-color: #EAF0FA;
   padding: 10px 0 10px 0;
@@ -288,4 +289,43 @@ textarea, select {
   margin:0.5em 0;
   border:1px solid #bbb;
   padding: 5px;
+}
+
+
+
+
+ul#tabnav { /* general settings */
+  text-align: left; /* set to left, right or center */
+  margin: 0;
+  list-style-type: none;
+}
+
+ul#tabnav li { /* do not change */
+  display: inline;
+  margin-right: 10px;
+  padding: 4px 8px; 
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+ul#tabnav li a { /* settings for all tab links */
+  color: #fff;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+ul#tabnav li:hover { /* settings for hover effect */
+  background: #B6D2E2; /* set desired hover color */
+}
+
+ul#tabnav li.active, ul#tabnav li.active:hover  {
+  color: #fff;
+  background-color: #B4D000;
+}
+
+
+#navigation #logo, #navigation #tabs {
+  padding: 10px 0;
 }

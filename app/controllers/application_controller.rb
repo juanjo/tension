@@ -6,11 +6,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   include AuthenticatedSystem
-  # You can move this into a different controller, if you wish.  This module gives you the require_role helpers, and others.
   include RoleRequirementSystem
-
+  
+  before_filter :set_active_tab
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
+
+    
+  protected
+    def set_active_tab
+      # will default to controller_name if @active_tab
+      # has not been set by another controller
+      @active_tab ||= self.controller_name.to_sym
+    end
   
 end

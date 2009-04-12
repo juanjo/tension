@@ -21,7 +21,16 @@
 	<!-- navigation --> 
 	<div id='navigation'> 	
   	  <div class='container'>
-		<div class="column span-24">
+		<div class="column span-19">
+			<div id='logo'>
+			SPREE EXTENSIONS
+			</div>
+	    </div>
+		
+		<div class="column span-5 last">
+		  <div id='tabs'>
+			 <%= navigation [:extensions, 'Extensions'], [:users, 'Authors'] %>
+		  </div>
 	    </div>
 	  </div>
     </div>
