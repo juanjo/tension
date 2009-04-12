@@ -13,6 +13,3 @@
 [submodule "vendor/plugins/has_permalink"]
 	path = vendor/plugins/has_permalink
 	url = git://github.com/fnando/has_permalink.git
-[submodule "vendor/plugins/role_requirement"]
-	path = vendor/plugins/role_requirement
-	url = git://github.com/timcharper/role_requirement.git

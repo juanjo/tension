@@ -1,0 +1,11 @@
+<h1>Spree Versions (<%= link_to 'add new', new_admin_version_path %>)</h1>
+
+<table>
+<% @versions.each do |version| %>
+  <tr class="<%= cycle('odd', 'even')%>">
+    <td><%= link_to version.name, admin_version_path(version) %></td>
+    <td width='30px'><%= link_to image_tag('edit.png'), edit_admin_version_path(version) %></td>
+    <td width='30px'><%= link_to image_tag('delete.png'), admin_version_path(version), :method => :delete, :confirm => 'Are you sure to delete this version?' %></td>
+  </tr>
+<% end %>
+</table>

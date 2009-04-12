@@ -1,0 +1,28 @@
+
+<h1>I've <%= @extensions.total_entries %> spree extensions</h1>
+
+<% for extension in @extensions %>
+  <div id='extension'>
+	
+   <div class="column span-24">
+	  <h3><%= link_to extension.name, extension_path(extension) %></h3>	
+   </div>
+
+	<div class="column span-11 append-1">
+      <p><%= h(extension.summary) %></p>
+    </div>
+
+	<div class="column span-12 last">	
+	  by <%= link_to extension.author.name, user_path(extension.author) %><br/>
+	  URL: <%= link_to extension.website, extension.website %><br/>
+	  SCM: <%= link_to extension.scm_location, extension.scm_location %><br/>
+	  <span class='last_commit'>Last updated: 23 January, 19:34</span>	
+    </div>
+
+  </div>
+  <hr/>
+<% end %>
+
+<div class="column span-24">
+  <%= will_paginate @extensions %>
+</div>

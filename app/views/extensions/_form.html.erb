@@ -1,0 +1,38 @@
+<div class="column span-12  first">
+<p>
+	<%= f.label :name, 'Extension\'s name'%><br/>
+	<%= f.text_field :name, :size => 60, :class => 'text_field' %>
+</p>
+
+<p>
+	<%= f.label :summary, 'Summary'%><br/>
+	<%= f.text_field :summary, :size => 60, :class => 'text_field' %>
+</p>
+
+<p>
+	<%= f.label :website, 'Website' %><br/>
+	<%= f.text_field :website, :size => 60, :class => 'text_field' %>
+</p>
+
+<p>
+	<%= f.label :scm_location, 'SCM URL (GIT or SVN)'%><br/>
+	<%= f.text_field :scm_location, :size => 60, :class => 'text_field' %>
+</p>
+
+
+  <h3>Supported Spree Versions</h3>
+  <p>
+  <% @available_versions.each do |version| -%>
+    <%= check_box_tag "extension[version_ids][]", version.id, @extension.versions.include?(version) %> <%= version.name %><br/>
+  <% end -%>
+  </p>
+
+</div>
+
+<div class="column span-12  last">
+  <p>
+    <%= f.label :description, 'Description'%><br/>
+    <%= f.text_area :description, :rows => 2 %><br/>
+	<i>you can use Textile in this field</i>
+  </p>			
+</div>

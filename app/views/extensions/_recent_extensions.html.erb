@@ -1,0 +1,7 @@
+<h3>Tags Cloud</h3>
+<dl>
+  <% Extension.recent(2).each do |extension| %>
+    <dt><%= link_to extension.name, extension_path(extension) %></dt>
+    <dd><%= extension.summary %></dd>
+  <% end %>
+</dl>

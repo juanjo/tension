@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />	
+  <title>Admin Spree Extension Directory</title>
+
+  <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/stylesheets/css/blueprint/src/print.css" type="text/css" media="print"> 
+  <!--[if IE]>
+    <link rel="stylesheet" href="/stylesheets/css/blueprint/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  <link rel="stylesheet" href="/stylesheets/extspree-admin.css" type="text/css" media="screen, projection">
+
+  <%= yield :head %>
+</head>
+
+<body>
+
+	
+	<!-- navigation --> 
+	<div id='navigation'> 	
+  	  <div class='container'>
+		<div class="column span-24">
+	    </div>
+	  </div>
+    </div>
+	
+	<div id='menu'> 	
+  	  <div class='container' id='menu-author'> 
+		<div class="column span-17  first">
+           <% if logged_in? -%>			
+			<ul id='navlist'>
+              <li class='dashboard'><%= link_to 'Dashboard', admin_root_url %></li>				
+		 	  <li class='version'><%= link_to 'Versions', admin_versions_url %></li>
+		      <li class='users'><%= link_to 'Users', admin_users_url %></li>				
+			  <li class='add'><%= link_to 'Add new extension', new_extension_path %></li>
+			  <li class='extension'><%= link_to 'My extensions', my_extensions_extensions_url %></li>
+			  <li class='profile'><%= link_to 'My profile', '' %></li>
+			</ul>
+			<% else %>
+			  &nbsp;
+			<% end %>
+		</div>
+		<div class="column span-7  last" id='login-bar'>
+			<%= render :partial => 'users/user_bar' %>
+		</div>		
+	  </div>
+	</div>	
+	
+	<!-- maincontent --> 	
+	<div id='wrapper'> 	
+  	  <div class='container' id='content'> 
+		<div class="column span-24  first"> 
+			<%= flash_message %> 
+		  <%= yield %>
+		</div>
+	  </div>
+	</div>
+	
+	<div id='footer'> 
+		<div class='container'> 
+
+		  <div class='column span-14 first'> 
+			<%= render :partial => 'extensions/recent_extensions' %>
+		  </div> 
+		  <div class='column span-6'>
+			<h3>About Spree</h3>
+			<p>
+              Spree is the complete open source commerce solution for Ruby on Rails originally developed by Sean Schofield. It is completely free to use and is licensed under the New BSD License.				
+			</p>
+		  </div>		
+		  <div class='column last span-4 last'> 
+			<h3>Follow Us</h3>
+		  </div>
+		</div>
+
+	</div>	
+	
+	<!-- footer --> 	
+
+</body>
+</html>

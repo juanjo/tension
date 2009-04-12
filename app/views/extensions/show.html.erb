@@ -1,0 +1,95 @@
+<div id='extension'>
+  <div class="column span-24">		
+    <h3><%= @extension.name  %></h3>
+    <span class='posted'>Posted by <%= link_to @extension.author.name, user_path(@extension.author) %> <%= distance_of_time_in_words(Time.now, @extension.created_at) %></span>
+  </div>
+
+
+  <div class="column span-18 first">
+    <p><%= h(@extension.summary) %></p>
+  </div>
+
+  <% if logged_in? && (@extension.owned_by(current_user) || current_user.has_role?('site_admin')) -%>
+    <div class="column span-6 last" id='menu-authoring'>	
+      <ul id='navlist'>
+	    <li><%= link_to 'Edit this extension', edit_extension_path(@extension) %></li>
+	    <li class='remove'><%= link_to 'Remove this extension', extension_path(@extension), :method => :delete, :confirm => 'Are you sure to delete this extension?' %></li>
+	  </ul>
+    </div>
+  <% end %>
+
+  <div class="column span-16">	
+    <h4 class='description'>Description</h4>
+    <%= @extension.description ? simple_format(@extension.description) : "<p><i>There's no description for this extension yet.</i></p>" %>
+  </div>
+
+  <div class="column span-8 last">
+	<h4 class='versions'>Spree Extensions Supported</h4>
+	<% if @extension.versions.size > 0 %>
+      <% @extension.versions.each do |version| %>
+        <%= link_to version.extension_name, version_path(version) %><br/>
+      <% end %>
+    <% else %>
+      <p><i>Not defined!</i></p>
+    <% end %>
+  </div>
+
+  <div class="column span-16">	
+	<h4 class='url'>URL + SCM</h4>
+    <span class='last_commit'><%= distance_of_time_in_words(Time.now, @commits.first.committed_date) if @extension.github? %> from the last commit</span>
+	
+    <ul class='url-list'>
+	  <li><strong>URL:</strong> <%= website_url(@extension) %></li>
+	  <li><strong>SCM:</strong> <%= link_to @extension.scm_location, @extension.scm_location %></li>
+	</ul>
+  </div>
+
+  <div class="column span-8 last">
+	<h4 class='author'>Author</h4>
+      <div class="column span-6 ">
+	    <p>
+	      <%= link_to @extension.author.name, user_path(@extension.author) %><br/>
+	      Lead Developer at 37Signals
+	    </p>
+	  </div>	
+      <div class="column span-1 last">
+	    <%= link_to gravatar_for(@extension.author, :size => 40, :class => 'gravatar-mini'), user_path(@extension.author, :title => @extension.author.name) %>
+	  </div>	
+  </div>
+
+
+
+</div>
+
+<% if @extension.github? %>
+<div id='extension'>
+  <div class="column span-24">	
+    <h3 class='news'><%= @extension.name  %> github commits (<%= link_to 'RSS', '' %>)</h3>
+  </div>
+
+  <% @commits.each do |commit| %>
+    <div id='commit-<%= commit.id%>'>
+     <div class="column span-1">
+	      <%= gravatar_for(commit.committer, :size => 30, :class => 'gravatar-mini', :title => commit.committer.name) %>
+	  </div>	
+	
+      <div class="column span-23 last">
+	      <strong><%= commit.committer.name %></strong> <%= commit.committed_date %><br/>
+	      <%= link_to commit.message, commit.url %>
+	  </div>
+    <hr/>
+  </div>
+  <% end %>
+
+<div class="column span-24">
+  <%= will_paginate @commits %>
+</div>
+
+</div>
+
+<% end %>
+
+
+<div class="column span-24">	
+  <%= link_to 'Back to Spree Extensions List', extensions_url %>
+</div>

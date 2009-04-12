@@ -1,0 +1,12 @@
+<h1>Add new spree extension</h1>
+
+<%= error_messages_for :extension %>
+
+<% form_for @extension, :url => extensions_path do |f| -%>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<div class="column span-24">
+  <p><%= submit_tag 'Add Spree Extension' %> o <%= link_to 'Cancel', my_extensions_extensions_url %></p>
+</div>
+
+<% end %>
+

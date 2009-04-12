@@ -1,0 +1,7 @@
+<ul id='navlist'>
+<% if logged_in? -%>
+  <li class='logged_in'><strong>Logged in as</strong> <%= link_to_current_user :content_method => :login %> | <%= link_to "Log out", logout_path, { :title => "Log out" }  %></li>
+<% else -%>
+  <li class='not_logged_in'>Not logged in <%= link_to "Log in",  login_path,  { :title => "Log in" } %> / <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></li>
+<% end -%>
+</ul>

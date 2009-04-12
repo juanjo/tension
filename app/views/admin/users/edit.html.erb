@@ -1,0 +1,8 @@
+<h1>Edit user</h1>
+<%= error_messages_for :user %>
+<% form_for :user, :url => admin_user_path, :html => {:method => :put}  do |f| -%>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <div class="column span-24">
+    <p><%= submit_tag 'Edit user' %> or <%= link_to 'Cancel', admin_users_url %></p>
+  </div>
+<% end %>

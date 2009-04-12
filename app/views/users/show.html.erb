@@ -1,0 +1,51 @@
+<div id='extension'>
+  <div class="column span-12">		
+    <h3><%= @user.name  %></h3>
+    <div class='container'>
+	<div class="column span-3">		
+	   <%= gravatar_for(@user, :size => 90, :class => 'gravatar-big') %>
+	</div>
+
+	  <div class="span-9 last">
+		<p>
+		This plugin provides a handful of view helpers for displaying gravatars (globally-recognized avatars).
+		</p>
+
+	    <p>
+		Gravatars allow users to configure an avatar to go with their email address at a central location: gravatar.com. Gravatar-aware websites (such as yours) can then look up and display each user’s preferred avatar, without having to handle avatar management. The user gets the benefit of not having to set up an avatar for each site that they post on.	
+		</p>
+
+		<hr/>
+
+		<ul class='url-list'>
+		  <li><strong>URL:</strong> <%= link_to 'http://www.thougths-intridea.com', '' %></li>
+		  <li><strong>URL:</strong> <%= link_to 'http://www.thougths-intridea.com', '' %></li>
+		  <li><strong>URL:</strong> <%= link_to 'http://www.thougths-intridea.com', '' %></li>		
+		</ul>
+
+	  </div>
+</div>
+
+  </div>
+
+  <div class="column span-12 last">	
+	<h3 class='author'>Owned Spree Extensions</h3>
+	<% @user.extensions.each do |extension| %>
+	  <h4 class='extensions'><%= link_to extension.name, extension_path(extension), :title => extension.summary %></h4>
+	<% end %>
+  </div>
+
+  <div id='personal-data'>
+  
+  </div>
+
+
+
+</div>
+
+<div id='extension'>
+<div class="column span-24">
+  <h3 class='news'>Latest news from extensions</h3>
+    
+</div>
+</div>
