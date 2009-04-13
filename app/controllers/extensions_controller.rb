@@ -69,6 +69,8 @@ class ExtensionsController < ApplicationController
     end
   end
 
+  
+
   private
   def load_data
     @available_versions = Version.all
