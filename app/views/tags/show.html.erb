@@ -1,0 +1,9 @@
+<h1>Extensions tagged as <i>'<%= @tag %>'</i></h1>
+
+<div id='extension'>
+	<% @extensions.each do |extension| %>
+     <div class="column span-24">
+	    <h3><%= link_to extension.name, extension_path(extension) %></h3>	
+     </div>	
+	<% end %>
+</div>

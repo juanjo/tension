@@ -34,5 +34,11 @@
     <%= f.label :description, 'Description'%><br/>
     <%= f.text_area :description, :rows => 2 %><br/>
 	<i>you can use Textile in this field</i>
-  </p>			
+  </p>
+
+<p>
+	<%= f.label :tag_list, 'Tags'%> (separated with commas)<br/>
+	<%= f.text_field :tag_list, :size => 60, :class => 'text_field' %>
+</p>
+			
 </div>

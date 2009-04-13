@@ -183,9 +183,14 @@ a:visited {
 }
 
 #extension span.posted {
-  display: block;
   color: #000;
 }
+
+#extension #tagged {
+  text-align: right;
+  color: #000;
+}
+
 
 #extension span.last_commit {
   display: block;

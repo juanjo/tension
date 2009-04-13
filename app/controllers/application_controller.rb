@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
 
+  def tag_cloud
+    @tags = Extension.tag_counts
+  end
+
     
   protected
     def set_active_tab

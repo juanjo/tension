@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :extensions, :collection => {:my_extensions => :get}
   map.resources :versions, :only => [:show]
+  map.resources :tags, :only => [:show]  
   
   map.namespace(:admin) do |admin|
     admin.root :controller => 'dashboard', :action => 'index'

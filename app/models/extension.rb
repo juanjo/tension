@@ -4,9 +4,10 @@ class Extension < ActiveRecord::Base
   belongs_to :author, :class_name => 'User', :foreign_key => :user_id, :counter_cache => true
   has_and_belongs_to_many :versions
   
-  validates_presence_of :name, :summary, :scm_location
+  acts_as_taggable
   
-#  validates_uniqueness_of :name, :scm_location
+  validates_presence_of :name, :summary, :scm_location
+  validates_uniqueness_of :name, :scm_location
   
   named_scope :recent, lambda { |*args| {:limit => (args.first || 3), :order => 'created_at DESC'} }  
 
