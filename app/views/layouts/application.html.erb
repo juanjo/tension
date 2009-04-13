@@ -37,19 +37,19 @@
 	
 	<div id='menu'> 	
   	  <div class='container' id='menu-author'> 
-		<div class="column span-16  first">
+		<div class="column span-14  first">
            <% if logged_in? -%>			
 			<ul id='navlist'>
 			  <li class='add'><%= link_to 'Add new extension', new_extension_path %></li>
 			  <li class='extension'><%= link_to 'My extensions', my_extensions_extensions_url %></li>
 			  <li class='profile'><%= link_to 'My profile', '' %></li>
-			  <%= content_tag(:li, link_to('Admin Zone', admin_root_url), :class => 'admin_zone') if current_user.has_role?('site_admin') %>	
+			  <%= content_tag(:li, link_to('Admin Zone', admin_root_url), :class => 'admin_zone') if current_user.has_role?('site_admin') %>
 			</ul>
 			<% else %>
 			  &nbsp;
 			<% end %>
 		</div>
-		<div class="column span-8 last" id='login-bar'>
+		<div class="column span-8 prepend-2 last" id='login-bar'>
 			<%= render :partial => 'users/user_bar' %>
 		</div>		
 	  </div>
@@ -68,8 +68,9 @@
 	<div id='footer'> 
 		<div class='container'> 
 
-		  <div class='column span-14 first'> 
-			<%= render :partial => 'extensions/recent_extensions' %>
+		  <div class='column span-14 first'>
+			<h3>Tag Cloud</h3> 
+			hola
 		  </div> 
 		  <div class='column span-6'>
 			<h3>About Spree</h3>

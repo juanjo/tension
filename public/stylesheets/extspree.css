@@ -75,6 +75,13 @@ a:visited {
   background: transparent url('/images/icons/author-not-logged.png') no-repeat left center;
 }
 
+#navlist li.remove {
+  background: transparent url('/images/icons/delete.png') no-repeat left center;
+}
+
+
+
+
 #wrapper {
   background: #fff url('/images/bg_content.png') repeat-x;
   padding: 10px;

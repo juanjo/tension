@@ -10,10 +10,10 @@
   </div>
 
   <% if logged_in? && (@extension.owned_by(current_user) || current_user.has_role?('site_admin')) -%>
-    <div class="column span-6 last" id='menu-authoring'>	
+    <div class="column span-6 last" id='authoring'>	
       <ul id='navlist'>
-	    <li><%= link_to 'Edit this extension', edit_extension_path(@extension) %></li>
-	    <li class='remove'><%= link_to 'Remove this extension', extension_path(@extension), :method => :delete, :confirm => 'Are you sure to delete this extension?' %></li>
+	    <li><%= link_to 'Edit', edit_extension_path(@extension) %></li>
+	    <li class='remove'><%= link_to 'Remove', extension_path(@extension), :method => :delete, :confirm => 'Are you sure to delete this extension?' %></li>
 	  </ul>
     </div>
   <% end %>
