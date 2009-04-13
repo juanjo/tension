@@ -8,6 +8,7 @@ class Extension < ActiveRecord::Base
   
   validates_presence_of :name, :summary, :scm_location
   validates_uniqueness_of :name, :scm_location
+  validates_url_of :website, :message => 'is not valid or not responding'  
   
   named_scope :recent, lambda { |*args| {:limit => (args.first || 3), :order => 'created_at DESC'} }  
 
