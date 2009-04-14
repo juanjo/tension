@@ -47,7 +47,7 @@
 
   <div class="column span-16">	
 	<h4 class='url'>URL + SCM</h4>
-    <span class='last_commit'><%= distance_of_time_in_words(Time.now, @commits.first.committed_date) if @extension.github? %> from the last commit</span>
+    <span class='last_commit'>Last commit <%= (@extension.github? && @commits) ? distance_of_time_in_words(Time.now, @commits.first.committed_date) : '--' %></span>
 	
     <ul class='url-list'>
 	  <li><strong>URL:</strong> <%= website_url(@extension) %></li>
@@ -72,10 +72,10 @@
 
 </div>
 
-<% if @extension.github? %>
+<% if @extension.github? && @commits %>
 <div id='extension'>
   <div class="column span-24">	
-    <h3 class='news'><%= @extension.name  %> github commits (<%= link_to 'RSS', '' %>)</h3>
+    <h3 class='news'><%= @extension.name  %> github commits</h3>
   </div>
 
   <% @commits.each do |commit| %>
