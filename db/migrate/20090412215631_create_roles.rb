@@ -3,10 +3,7 @@ class CreateRoles < ActiveRecord::Migration
     create_table "roles" do |t|
       t.string :name, :null => false
       t.string :description, :null => false
-    end
-
-    Role.create(:name => 'site_admin', :description => 'Site Administrator')
-    
+    end    
     # generate the join table
     create_table "roles_users", :id => false do |t|
       t.references :role, :null => false

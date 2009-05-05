@@ -1,0 +1,8 @@
+steve:
+  login: steve
+  name: Steve Jobs
+  email: example@example.org  
+  activated_at: <%=Time.now%>
+  salt: 54340fb3737c0d1af17fe73b02d50f4350618c76
+  crypted_password: 5531faf8d0c82af323af307cf8aebcf4499af3a8
+  state: active
