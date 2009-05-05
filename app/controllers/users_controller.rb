@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  
-  # Protect these actions behind an admin login
-  # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
 
   def index
     @users = User.paginate(:all, :order => 'name ASC', :page => params[:page], :per_page => 6)
@@ -48,33 +44,5 @@ class UsersController < ApplicationController
       redirect_back_or_default('/')
     end
   end
-
-  def suspend
-    @user.suspend! 
-    redirect_to users_path
-  end
-
-  def unsuspend
-    @user.unsuspend! 
-    redirect_to users_path
-  end
-
-  def destroy
-    @user.delete!
-    redirect_to users_path
-  end
-
-  def purge
-    @user.destroy
-    redirect_to users_path
-  end
   
-  # There's no page here to update or destroy a user.  If you add those, be
-  # smart -- make sure you check that the visitor is authorized to do so, that they
-  # supply their old password along with a new one to update it, etc.
-
-protected
-  def find_user
-    @user = User.find(params[:id])
-  end
 end

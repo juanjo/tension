@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   include AuthenticatedSystem
   include RoleRequirementSystem
+  include EasyRoleRequirementSystem
   
   before_filter :set_active_tab
 

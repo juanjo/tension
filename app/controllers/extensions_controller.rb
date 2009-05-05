@@ -1,7 +1,5 @@
 class ExtensionsController < ApplicationController
-  before_filter :login_required, :except => [:index, :show]
-  before_filter :load_data, :only => [:new, :edit, :create, :update]
-  
+  before_filter :load_data, :only => [:new, :edit, :create, :update]  
   
   def index
     @extensions = Extension.paginate(:all, :page => params[:page], :order => 'updated_at DESC', :per_page => 3)

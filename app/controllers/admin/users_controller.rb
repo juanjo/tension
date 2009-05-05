@@ -1,7 +1,4 @@
 class Admin::UsersController < ApplicationController
-  before_filter :login_required  
-  require_role :site_admin  
-
   before_filter :find_user, :only => [:show, :edit, :update, :suspend, :unsuspend, :destroy, :purge, :activate, :reset_password]
   
   layout 'admin'  
