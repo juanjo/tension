@@ -1,10 +1,10 @@
-<h1>Edit Spree Version</h1>
+<h1>Edit <%=  APP_CONFIG['tension']['software_name'] %>   Version</h1>
 
 <%= error_messages_for :extension %>
 
 <% form_for @version, :url => admin_version_path do |f| -%>
   <%= render :partial => 'form', :locals => { :f => f } %>
   <div class="column span-24">
-    <p><%= submit_tag 'Edit Spree Version' %> o <%= link_to 'Cancel', admin_versions_url %></p>
+    <p><%= submit_tag "Edit #{APP_CONFIG['tension']['software_name']} Version" %> o <%= link_to 'Cancel', admin_versions_url %></p>
   </div>
 <% end %>

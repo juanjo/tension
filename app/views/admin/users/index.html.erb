@@ -1,4 +1,4 @@
-<h1><%= @users.total_entries %> Spree Extensions Directory Users (<%= link_to 'add', new_admin_user_path %>)</h1>
+<h1><%= @users.total_entries %> <%= APP_CONFIG['tension']['software_name'] %> Extensions Directory Users (<%= link_to 'add', new_admin_user_path %>)</h1>
 
 <table>
 <% @users.each do |user| %>

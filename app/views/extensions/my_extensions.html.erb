@@ -1,5 +1,5 @@
 
-<h1>I've <%= @extensions.total_entries %> spree extensions</h1>
+<h1>I've <%= @extensions.total_entries %> <%= APP_CONFIG['tension']['software_name'] %> extensions</h1>
 
 <% for extension in @extensions %>
   <div id='extension'>

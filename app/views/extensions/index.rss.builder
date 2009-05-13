@@ -1,8 +1,8 @@
 xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "Spree Extensions Directory"
-    xml.description "A sample description..."
+    xml.title APP_CONFIG['tension']['site_name']
+    xml.description APP_CONFIG['tension']['site_summary']
     xml.link extensions_url
 
     for extension in @extensions

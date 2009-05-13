@@ -20,7 +20,7 @@
 </p>
 
 
-  <h3>Supported Spree Versions</h3>
+<h3>Supported <%= APP_CONFIG['tension']['software_name'] %> Versions</h3>
   <p>
   <% @available_versions.each do |version| -%>
     <%= check_box_tag "extension[version_ids][]", version.id, @extension.versions.include?(version) %> <%= version.name %><br/>

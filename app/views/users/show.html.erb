@@ -29,7 +29,7 @@
   </div>
 
   <div class="column span-12 last">	
-	<h3 class='author'>Owned Spree Extensions</h3>
+    <h3 class='author'>Owned <%= APP_CONFIG['tension']['software_name'] %> Extensions</h3>
 	<% @user.extensions.each do |extension| %>
 	  <h4 class='extensions'><%= link_to extension.name, extension_path(extension), :title => extension.summary %></h4>
 	<% end %>

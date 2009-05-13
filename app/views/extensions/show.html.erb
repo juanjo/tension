@@ -35,7 +35,7 @@
   </div>
 
   <div class="column span-8 last">
-	<h4 class='versions'>Spree Extensions Supported</h4>
+    <h4 class='versions'><%= APP_CONFIG['tension']['software_name'] %> Extensions Supported</h4>
 	<% if @extension.versions.size > 0 %>
       <% @extension.versions.each do |version| %>
         <%= link_to version.extension_name, version_path(version) %><br/>
@@ -102,5 +102,5 @@
 
 
 <div class="column span-24">	
-  <%= link_to 'Back to Spree Extensions List', extensions_url %>
+  <%= link_to "Back to  #{APP_CONFIG['tension']['software_name']} Extensions List", extensions_url %>
 </div>
