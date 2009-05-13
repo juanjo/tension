@@ -2,7 +2,10 @@ class ExtensionsController < ApplicationController
   before_filter :load_data, :only => [:new, :edit, :create, :update]  
   
   def index
-    @extensions = Extension.paginate(:all, :page => params[:page], :order => 'updated_at DESC', :per_page => 3)
+    respond_to do |format|
+      format.html { @extensions = Extension.paginate(:all, :page => params[:page], :order => 'updated_at DESC', :per_page => 3) }
+      format.rss { @extensions = Extension.find(:all, :order => 'updated_at DESC', :limit => 10) }
+    end
   end
   
   def my_extensions
