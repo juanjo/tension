@@ -1,0 +1,36 @@
+xapian_serach:
+  name: Xapian Search
+  summary: This is a fake summary.  Normally real data would go here.
+  scm_location: git://github.com/whatever.git
+  website: http://github.com/schof/whatever
+  description: This is a fake description.  It is essentially a longer version of the fake summary but with more words.
+  author: steve
+  permalink: xapian-search
+  versions: 0_8_0
+pp_website_standard:
+  name: Paypal Website Standard
+  summary: This is a fake summary.  Normally real data would go here.
+  scm_location: git://github.com/whatever.git
+  website: http://github.com/schof/whatever
+  description: This is a fake description.  It is essentially a longer version of the fake summary but with more words.
+  author: steve
+  permalink: pp-website-standard
+  versions: 0_6_0
+google_base:
+  name: Google Base
+  summary: This is a fake summary.  Normally real data would go here.
+  scm_location: git://github.com/whatever.git
+  website: http://github.com/schof/whatever
+  description: This is a fake description.  It is essentially a longer version of the fake summary but with more words.
+  author: steve
+  permalink: google-base
+  versions: 0_7_0, 0_7_1
+volume_pricing:
+  name: Volume Pricing
+  summary: This is a fake summary.  Normally real data would go here.
+  scm_location: git://github.com/whatever.git
+  website: http://github.com/schof/whatever
+  description: This is a fake description.  It is essentially a longer version of the fake summary but with more words.
+  author: steve
+  permalink: volume_pricing
+  versions: 0_7_0, 0_7_1

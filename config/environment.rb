@@ -24,8 +24,8 @@ Rails::Initializer.run do |config|
   config.gem "mash", :version => ">=0.0.3"
   config.gem "unicode", :version => ">=0.1"  
   
-  #config.gem "ruby-github", :version => ">=0.0.3", :lib => "ruby-github", :source => "http://gems.github.com"
-  
+  config.gem "ruby-github", :version => ">=0.0.3", :lib => "ruby-github", :source => "http://gems.github.com"
+  config.gem "highline", :version => '>=1.4.0'
   
   
   
